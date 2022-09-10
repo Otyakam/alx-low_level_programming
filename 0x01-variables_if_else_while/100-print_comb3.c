@@ -1,23 +1,46 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
+/* betty style doc for function main goes there */
 /**
- * main - print 00 to 99
+ * main - Entry point
  *
- * Return: zero
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
 	int i;
+	int j;
 
-	for (i = 0; i <= 99; i++)
+	i = 48;
+	j = 49;
+	while  ((i < 57) && (j < 58))
 	{
-		putchar((i / 10) + '0');
-		putchar((i % 10) + '0');
-		if (i == 99)
-			break;
-		putchar(',');
-		putchar(' ');
+		putchar(i);
+		putchar(j);
+		if ((i == 56) && (j == 57))
+		{
+			putchar('\n');
+			i++;
+			j++;
+		}
+		else
+		{
+			putchar(44);
+			putchar(32);
+			if (j < 57)
+			{
+				j++;
+			}
+			else
+			{
+				i++;
+				j = 1 + i;
+			}
+		}
+
 	}
-	putchar('\n');
+
 	return (0);
 }
